@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ChatLib\ChatLib.csproj" />
+    <ProjectReference Include="..\..\library\ChatLib.csproj" />
   </ItemGroup>
 
 </Project>
