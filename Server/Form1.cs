@@ -32,19 +32,19 @@ namespace WinFormServer
       lbxMsg.Items.Add(message);
     }
 
-    private void Connected(object? sender, ChatEventArgs e)
+    private void Connected(object? sender, ChatEventArgs e) // 클라 접속하는 순간
     {
       var hub = CreateNewStateChatHub(e.Hub, ChatState.Connect);
 
       _roomManager.Add(e.ClientHandler);
       _roomManager.SendToMyRoom(hub);
 
-      lbxClients.Items.Add(e.Hub);
-      AddClientMessageList(hub);
+      lbxClients.Items.Add(e.Hub); // server client 정보 추가
+      AddClientMessageList(hub); // 접속 메시지 전송
     }
 
-    private void Disconnected(object? sender, ChatEventArgs e)
-    {
+    private void Disconnected(object? sender, ChatEventArgs e)  // 클라 접속 하는 순간
+     {
       var hub = CreateNewStateChatHub(e.Hub, ChatState.Disconnect);
 
       _roomManager.Remove(e.ClientHandler);
