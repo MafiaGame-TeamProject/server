@@ -25,25 +25,31 @@ namespace WinFormServer
     {
       string message = hub.State switch
       {
-        ChatState.Connect => $"¡Ú Á¢¼Ó ¡Ú {hub} ¡Ú",
-        ChatState.Disconnect => $"¡Ú Á¢¼Ó Á¾·á ¡Ú {hub} ¡Ú",
+        ChatState.Connect => $"â˜… ì ‘ì† â˜… {hub} â˜…",
+        ChatState.Disconnect => $"â˜… ì ‘ì† ì¢…ë£Œ â˜… {hub} â˜…",
         _ => $"{hub}: {hub.Message}"
       };
       lbxMsg.Items.Add(message);
     }
 
-    private void Connected(object? sender, ChatEventArgs e) // Å¬¶ó Á¢¼ÓÇÏ´Â ¼ø°£
+    private void Connected(object? sender, ChatEventArgs e) // í´ë¼ ì ‘ì†í•˜ëŠ” ìˆœê°„
     {
       var hub = CreateNewStateChatHub(e.Hub, ChatState.Connect);
 
-      _roomManager.Add(e.ClientHandler);
-      _roomManager.SendToMyRoom(hub);
+      int count = _roomManager.Add(e.ClientHandler); // ì¸ì› ìˆ˜, 0ì€ ì¸ì› ê°€ë“ì°¸
+      if(count != 0){
+        _roomManager.SendToMyRoom(hub);
 
-      lbxClients.Items.Add(e.Hub); // server client Á¤º¸ Ãß°¡
-      AddClientMessageList(hub); // Á¢¼Ó ¸Ş½ÃÁö Àü¼Û
+        lbxClients.Items.Add(e.Hub); // server client ì •ë³´ ì¶”ê°€
+        AddClientMessageList(hub); // ì ‘ì† ë©”ì‹œì§€ ì „ì†¡
+
+        if(count == 4){
+          // ê²Œì„ì‹œì‘ ë° ì œì‹œì–´ ì œê³µ
+        }
+      }
     }
 
-    private void Disconnected(object? sender, ChatEventArgs e)  // Å¬¶ó Á¢¼Ó ÇÏ´Â ¼ø°£
+    private void Disconnected(object? sender, ChatEventArgs e)  // í´ë¼ ì ‘ì† í•˜ëŠ” ìˆœê°„
      {
       var hub = CreateNewStateChatHub(e.Hub, ChatState.Disconnect);
 
