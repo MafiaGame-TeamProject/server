@@ -2,7 +2,10 @@ using ChatLib.Events;
 using ChatLib.Handlers;
 using ChatLib.Models;
 using ChatLib.Sockets;
+using System.IO;
+using System.Linq;
 using System.Net;
+using System.Windows.Forms;
 
 namespace WinFormServer
 {
@@ -32,18 +35,26 @@ namespace WinFormServer
             lbxMsg.Items.Add(message);
         }
 
-        private void Connected(object? sender, ChatEventArgs e) // 클라 접속하는 순간
+        private void Connected(object? sender, ChatEventArgs e)
         {
             var hub = CreateNewStateChatHub(e.Hub, ChatState.Connect);
 
-            _roomManager.Add(e.ClientHandler);
+            var userList = _roomManager.Add(e.ClientHandler);
             _roomManager.SendToMyRoom(hub);
 
-            lbxClients.Items.Add(e.Hub); // server client 정보 추가
-            AddClientMessageList(hub); // 접속 메시지 전송
+            lbxClients.Items.Add(e.Hub);
+            AddClientMessageList(hub);
+
+            SendUserListToRoomClients(hub.RoomId);
+
+            // 만약 방에 4명이 있다면 제시어를 할당하고 전송
+            if (userList.Count == 4)
+            {
+                AssignAndSendWords(userList, hub.RoomId);
+            }
         }
 
-        private void Disconnected(object? sender, ChatEventArgs e)  // 클라 접속 끊는 순간
+        private void Disconnected(object? sender, ChatEventArgs e)
         {
             var hub = CreateNewStateChatHub(e.Hub, ChatState.Disconnect);
 
@@ -57,7 +68,6 @@ namespace WinFormServer
         private void Received(object? sender, ChatEventArgs e)
         {
             _roomManager.SendToMyRoom(e.Hub);
-
             AddClientMessageList(e.Hub);
         }
 
@@ -90,6 +100,54 @@ namespace WinFormServer
 
             btnStart.Click += BtnStart_Click;
             btnStop.Click += BtnStop_Click;
+        }
+
+        private void SendUserListToRoomClients(int roomId)
+        {
+            var users = _roomManager.GetRoomUsers(roomId);
+            var userNames = users.Select(u => u.InitialData.UserName).ToList();
+            var responseHub = new ChatHub
+            {
+                RoomId = roomId,
+                State = ChatState.Message,
+                Message = "USER_LIST:" + string.Join(",", userNames)
+            };
+            foreach (var client in users)
+            {
+                client.Send(responseHub);
+            }
+        }
+
+        private List<string[]> ReadCsv(string filePath)
+        {
+            var lines = File.ReadAllLines(filePath);
+            return lines.Select(line => line.Split(','))
+                        .Where(columns => columns.Length >= 3)
+                        .ToList();
+        }
+
+        private void AssignAndSendWords(List<ClientHandler> users, int roomId)
+        {
+            var csvData = ReadCsv("C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\category\\categories_v2.csv");
+            var random = new Random();
+            var selectedRow = csvData[random.Next(csvData.Count)];
+
+            var word1 = selectedRow[1];
+            var word2 = selectedRow[2];
+
+            var liarIndex = random.Next(users.Count);
+            for (int i = 0; i < users.Count; i++)
+            {
+                var assignedWord = i == liarIndex ? word1 : word2;
+                var responseHub = new ChatHub
+                {
+                    RoomId = roomId,
+                    State = ChatState.Message,
+                    Message = "WORD:" + assignedWord
+                };
+                Console.WriteLine("RoomID:"+responseHub.RoomId+" Massage: "+responseHub.Message);
+                users[i].Send(responseHub);
+            }
         }
     }
 }
