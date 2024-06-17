@@ -14,6 +14,8 @@ namespace WinFormServer
         private ChatServer _server;
         private ClientRoomManager _roomManager;
 
+        private List<string> votedUsers = new ();
+
         private ChatHub CreateNewStateChatHub(ChatHub hub, ChatState state)
         {
             return new ChatHub
@@ -67,9 +69,49 @@ namespace WinFormServer
 
         private void Received(object? sender, ChatEventArgs e)
         {
-            /*_roomManager.SendToMyRoom(e.Hub);*/
+            // _roomManager.SendToMyRoom(e.Hub);
             SendMessages(e.Hub.Message, e.Hub.UserName, e.Hub.RoomId);
             AddClientMessageList(e.Hub);
+
+            ChatHub hub = e.Hub;
+            var users = _roomManager.GetRoomUsers(hub.RoomId);
+
+            if (hub.Message.StartsWith("VOTED:"))
+            {
+                string votedUser = hub.Message.Substring("WORD:".Length);
+                votedUsers.Add(votedUser);
+
+                var mostVotedUser = votedUsers.GroupBy(u => u)
+                             .OrderByDescending(g => g.Count())
+                             .Select(g => g.Key)
+                             .FirstOrDefault();
+
+                var responseHub = new ChatHub
+                {
+                    RoomId = hub.RoomId,
+                    State = ChatState.Message,
+                    Message = $"VOTEDUSER:{mostVotedUser}",
+                };
+                foreach (var client in users)
+                {
+                    client.Send(responseHub);
+                }
+            }
+
+            if (hub.Message.StartsWith("ANSWER:"))
+            {
+                var answer = hub.Message.Substring("ANSWER:".Length);
+                var responseHub = new ChatHub
+                {
+                    RoomId = hub.RoomId,
+                    State = ChatState.Message,
+                    Message = $"ANSWERWORD:{answer}",
+                };
+                foreach (var client in users)
+                {
+                    client.Send(responseHub);
+                }
+            }
         }
 
         private void RunningStateChanged(bool isRunning)
@@ -174,17 +216,5 @@ namespace WinFormServer
                 users[i].Send(responseHub);
             }
         }
-
-        // private void Voted(int number)
-        // {
-        //     var electedList = _roomManager.Add(number);
-        //     var responseHub = new ChatHub
-
-        //     if (electedList.Count == 4)
-        //     {
-        //         client.Send(responseHub);
-        //     }
-        // }
-
     }
 }
