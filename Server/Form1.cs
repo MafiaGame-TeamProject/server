@@ -81,20 +81,22 @@ namespace WinFormServer
                 string votedUser = hub.Message.Substring("VOTED:".Length);
                 votedUsers.Add(votedUser);
 
-                var mostVotedUser = votedUsers.GroupBy(u => u)
-                             .OrderByDescending(g => g.Count())
-                             .Select(g => g.Key)
-                             .FirstOrDefault();
+                if(votedUsers.Count == 4){
+                    var mostVotedUser = votedUsers.GroupBy(u => u)
+                                .OrderByDescending(g => g.Count())
+                                .Select(g => g.Key)
+                                .FirstOrDefault();
 
-                var responseHub = new ChatHub
-                {
-                    RoomId = hub.RoomId,
-                    State = ChatState.Message,
-                    Message = $"VOTEDUSER:{mostVotedUser}",
-                };
-                foreach (var client in users)
-                {
-                    client.Send(responseHub);
+                    var responseHub = new ChatHub
+                    {
+                        RoomId = hub.RoomId,
+                        State = ChatState.Message,
+                        Message = $"VOTEDUSER:{mostVotedUser}",
+                    };
+                    foreach (var client in users)
+                    {
+                        client.Send(responseHub);
+                    }
                 }
             }
 
