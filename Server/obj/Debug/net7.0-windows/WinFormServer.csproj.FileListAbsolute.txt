@@ -19,3 +19,24 @@ C:\Users\gifou\LiarDemo\server\Server\obj\Debug\net7.0-windows\refint\WinFormSer
 C:\Users\gifou\LiarDemo\server\Server\obj\Debug\net7.0-windows\WinFormServer.pdb
 C:\Users\gifou\LiarDemo\server\Server\obj\Debug\net7.0-windows\WinFormServer.genruntimeconfig.cache
 C:\Users\gifou\LiarDemo\server\Server\obj\Debug\net7.0-windows\ref\WinFormServer.dll
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\WinFormServer.exe
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\WinFormServer.deps.json
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\WinFormServer.runtimeconfig.json
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\WinFormServer.dll
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\WinFormServer.pdb
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\ChatLib.dll
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\bin\Debug\net7.0-windows\ChatLib.pdb
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.csproj.AssemblyReference.cache
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.Form1.resources
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.csproj.GenerateResource.cache
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.AssemblyInfoInputs.cache
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.AssemblyInfo.cs
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.csproj.CoreCompileInputs.cache
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.sourcelink.json
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormS.29AB14A1.Up2Date
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.dll
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\refint\WinFormServer.dll
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.pdb
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.genruntimeconfig.cache
+C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\ref\WinFormServer.dll

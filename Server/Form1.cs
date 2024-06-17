@@ -153,8 +153,10 @@ namespace WinFormServer
             string fullPath = Path.Combine(baseDirectory, relativePath);
             var csvData = ReadCsv(fullPath);
             var random = new Random();
-            var selectedRow = csvData[random.Next(csvData.Count)];
+            var rowIndex = random.Next(csvData.Count);
+            var selectedRow = csvData[rowIndex];
 
+            var title = selectedRow[0];
             var word1 = selectedRow[1];
             var word2 = selectedRow[2];
 
@@ -166,11 +168,12 @@ namespace WinFormServer
                 {
                     RoomId = roomId,
                     State = ChatState.Message,
-                    Message = "WORD:" + assignedWord
+                    Message = $"WORD:{rowIndex},{title},{assignedWord}"
                 };
-                Console.WriteLine("RoomID:"+responseHub.RoomId+" Massage: "+responseHub.Message);
+                Console.WriteLine("RoomID:" + responseHub.RoomId + " Message: " + responseHub.Message);
                 users[i].Send(responseHub);
             }
         }
+
     }
 }
