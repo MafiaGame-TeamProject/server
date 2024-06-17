@@ -67,7 +67,8 @@ namespace WinFormServer
 
         private void Received(object? sender, ChatEventArgs e)
         {
-            _roomManager.SendToMyRoom(e.Hub);
+            /*_roomManager.SendToMyRoom(e.Hub);*/
+            SendMessages(e.Hub.Message, e.Hub.UserName, e.Hub.RoomId);
             AddClientMessageList(e.Hub);
         }
 
@@ -124,6 +125,22 @@ namespace WinFormServer
             return lines.Select(line => line.Split(','))
                         .Where(columns => columns.Length >= 3)
                         .ToList();
+        }
+
+        private void SendMessages(string msg, string user, int roomId)
+        {
+            var users = _roomManager.GetRoomUsers(roomId);
+            var responseHub = new ChatHub
+            {
+                RoomId = roomId,
+                State = ChatState.Message,
+                Message = "MESSAGE:" + user + ":" + msg
+            };
+            foreach(var client in users)
+            {
+                client.Send(responseHub);
+            }
+            Console.WriteLine("RoomID:" + responseHub.RoomId + " MESSAGE:" + user + ":"+ msg);
         }
 
         private void AssignAndSendWords(List<ClientHandler> users, int roomId)
