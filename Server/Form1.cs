@@ -205,6 +205,7 @@ namespace WinFormServer
             var word2 = selectedRow[2];
 
             var liarIndex = random.Next(users.Count);
+            var liarName = users[liarIndex].InitialData?.UserName;
             for (int i = 0; i < users.Count; i++)
             {
                 var assignedWord = i == liarIndex ? word1 : word2;
@@ -212,7 +213,7 @@ namespace WinFormServer
                 {
                     RoomId = roomId,
                     State = ChatState.Message,
-                    Message = $"WORD:{rowIndex},{title},{assignedWord},{word2},{liarIndex}",
+                    Message = $"WORD:{rowIndex},{title},{word1},{word2},{assignedWord},{liarName}",
                 };
                 Console.WriteLine("RoomID:" + responseHub.RoomId + " Message: " + responseHub.Message);
                 users[i].Send(responseHub);
