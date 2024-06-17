@@ -128,7 +128,13 @@ namespace WinFormServer
 
         private void AssignAndSendWords(List<ClientHandler> users, int roomId)
         {
-            var csvData = ReadCsv("C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\category\\categories_v2.csv");
+            // 프로젝트 루트 디렉토리를 가져옵니다.
+            string baseDirectory = Directory.GetParent(Application.StartupPath).Parent.Parent.Parent.FullName;
+            // 상대 경로를 설정합니다.
+            string relativePath = @"category\categories_v2.csv";
+            // 전체 경로를 결합합니다.
+            string fullPath = Path.Combine(baseDirectory, relativePath);
+            var csvData = ReadCsv(fullPath);
             var random = new Random();
             var selectedRow = csvData[random.Next(csvData.Count)];
 
