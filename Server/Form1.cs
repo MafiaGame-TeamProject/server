@@ -164,17 +164,14 @@ namespace WinFormServer
             for (int i = 0; i < users.Count; i++)
             {
                 var assignedWord = i == liarIndex ? word1 : word2;
-                var responseHub = new GameHub
+                var responseHub = new ChatHub
                 {
                     RoomId = roomId,
                     State = ChatState.Message,
-                    Message = $"WORD:{rowIndex},{title},{assignedWord}",
-                    liarId = liarIndex,
-                    word1 = word1,
-                    word2 = word2,
+                    Message = $"WORD:{rowIndex},{title},{assignedWord},{word2},{liarIndex}",
                 };
                 Console.WriteLine("RoomID:" + responseHub.RoomId + " Message: " + responseHub.Message);
-                users[i].GameInfoSend(responseHub);
+                users[i].Send(responseHub);
             }
         }
 
