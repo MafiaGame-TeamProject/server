@@ -76,6 +76,21 @@ namespace WinFormServer
             ChatHub hub = e.Hub;
             var users = _roomManager.GetRoomUsers(hub.RoomId);
 
+            if (hub.Message.StartsWith("plzUserList"))
+            {
+                var userNames = users.Select(u => u.InitialData.UserName).ToList();
+                var responseHub = new ChatHub
+                {
+                    RoomId = hub.RoomId,
+                    State = ChatState.Message,
+                    Message = "VOTE_USER_LIST:" + string.Join(",", userNames)
+                };
+                foreach (var client in users)
+                {
+                    client.Send(responseHub);
+                }
+            }
+
             if (hub.Message.StartsWith("VOTED:"))
             {
                 string votedUser = hub.Message.Substring("VOTED:".Length);
