@@ -171,9 +171,20 @@ namespace WinFormServer
                     Message = $"WORD:{rowIndex},{title},{assignedWord}"
                 };
                 Console.WriteLine("RoomID:" + responseHub.RoomId + " Message: " + responseHub.Message);
-                users[i].Send(responseHub);
+                users[i].Send(responseHub, liarIndex);
             }
         }
+
+        // private void Voted(int number)
+        // {
+        //     var electedList = _roomManager.Add(number);
+        //     var responseHub = new ChatHub
+
+        //     if (electedList.Count == 4)
+        //     {
+        //         client.Send(responseHub);
+        //     }
+        // }
 
     }
 }
