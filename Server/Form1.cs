@@ -78,7 +78,7 @@ namespace WinFormServer
 
             if (hub.Message.StartsWith("VOTED:"))
             {
-                string votedUser = hub.Message.Substring("WORD:".Length);
+                string votedUser = hub.Message.Substring("VOTED:".Length);
                 votedUsers.Add(votedUser);
 
                 var mostVotedUser = votedUsers.GroupBy(u => u)
