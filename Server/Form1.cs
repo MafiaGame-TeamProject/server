@@ -2,6 +2,7 @@ using ChatLib.Events;
 using ChatLib.Handlers;
 using ChatLib.Models;
 using ChatLib.Sockets;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -70,12 +71,18 @@ namespace WinFormServer
         private void Received(object? sender, ChatEventArgs e)
         {
             // _roomManager.SendToMyRoom(e.Hub);
-            SendMessages(e.Hub.Message, e.Hub.UserName, e.Hub.RoomId);
+            
             AddClientMessageList(e.Hub);
 
             ChatHub hub = e.Hub;
             var users = _roomManager.GetRoomUsers(hub.RoomId);
 
+            if (hub.Message.StartsWith("MsgSend:"))
+            {
+                var msg = hub.Message.Substring("MsgSend:".Length);
+                
+                SendMessages(msg, e.Hub.UserName, e.Hub.RoomId);
+            }
             if (hub.Message.StartsWith("plzUserList"))
             {
                 var userNames = users.Select(u => u.InitialData.UserName).ToList();
@@ -85,6 +92,7 @@ namespace WinFormServer
                     State = ChatState.Message,
                     Message = "VOTE_USER_LIST:" + string.Join(",", userNames)
                 };
+                Console.WriteLine("RoomID:" + responseHub.RoomId + " MESSAGE:" + responseHub.Message);
                 foreach (var client in users)
                 {
                     client.Send(responseHub);

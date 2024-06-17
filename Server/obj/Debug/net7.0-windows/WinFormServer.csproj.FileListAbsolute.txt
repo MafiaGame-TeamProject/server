@@ -40,3 +40,24 @@ C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows
 C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.pdb
 C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\WinFormServer.genruntimeconfig.cache
 C:\Users\ibsun\OneDrive\바탕 화면\APP\server\Server\obj\Debug\net7.0-windows\ref\WinFormServer.dll
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\WinFormServer.exe
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\WinFormServer.deps.json
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\WinFormServer.runtimeconfig.json
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\WinFormServer.dll
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\WinFormServer.pdb
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\ChatLib.dll
+D:\2024\3-1\AS\teamproject\server\Server\bin\Debug\net7.0-windows\ChatLib.pdb
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.csproj.AssemblyReference.cache
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.Form1.resources
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.csproj.GenerateResource.cache
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.AssemblyInfoInputs.cache
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.AssemblyInfo.cs
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.csproj.CoreCompileInputs.cache
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.sourcelink.json
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormS.29AB14A1.Up2Date
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.dll
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\refint\WinFormServer.dll
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.pdb
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\WinFormServer.genruntimeconfig.cache
+D:\2024\3-1\AS\teamproject\server\Server\obj\Debug\net7.0-windows\ref\WinFormServer.dll

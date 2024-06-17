@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\WinFormServer.csproj": {}
+    "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\WinFormServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\library\\ChatLib.csproj": {
+    "D:\\2024\\3-1\\AS\\teamproject\\library\\ChatLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\library\\ChatLib.csproj",
+        "projectUniqueName": "D:\\2024\\3-1\\AS\\teamproject\\library\\ChatLib.csproj",
         "projectName": "ChatLib",
-        "projectPath": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\library\\ChatLib.csproj",
-        "packagesPath": "C:\\Users\\ibsun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\library\\obj\\",
+        "projectPath": "D:\\2024\\3-1\\AS\\teamproject\\library\\ChatLib.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\2024\\3-1\\AS\\teamproject\\library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ibsun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\WinFormServer.csproj": {
+    "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\WinFormServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\WinFormServer.csproj",
+        "projectUniqueName": "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\WinFormServer.csproj",
         "projectName": "WinFormServer",
-        "projectPath": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\WinFormServer.csproj",
-        "packagesPath": "C:\\Users\\ibsun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\server\\Server\\obj\\",
+        "projectPath": "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\WinFormServer.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ibsun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\library\\ChatLib.csproj": {
-                "projectPath": "C:\\Users\\ibsun\\OneDrive\\바탕 화면\\APP\\library\\ChatLib.csproj"
+              "D:\\2024\\3-1\\AS\\teamproject\\library\\ChatLib.csproj": {
+                "projectPath": "D:\\2024\\3-1\\AS\\teamproject\\library\\ChatLib.csproj"
               }
             }
           }
@@ -127,7 +127,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }
