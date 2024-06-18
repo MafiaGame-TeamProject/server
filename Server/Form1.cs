@@ -27,17 +27,6 @@ namespace WinFormServer
             };
         }
 
-        private void AddClientMessageList(ChatHub hub)
-        {
-            string message = hub.State switch
-            {
-                ChatState.Connect => $"★ 접속 ★ {hub} ★",
-                ChatState.Disconnect => $"★ 접속 종료 ★ {hub} ★",
-                _ => $"{hub}: {hub.Message}"
-            };
-            lbxMsg.Items.Add(message);
-        }
-
         private void Connected(object? sender, ChatEventArgs e)
         {
             var hub = CreateNewStateChatHub(e.Hub, ChatState.Connect);
@@ -45,8 +34,7 @@ namespace WinFormServer
             var userList = _roomManager.Add(e.ClientHandler);
             _roomManager.SendToMyRoom(hub);
 
-            lbxClients.Items.Add(e.Hub);
-            AddClientMessageList(hub);
+            Clients.Items.Add(e.Hub);
 
             SendUserListToRoomClients(hub.RoomId);
 
@@ -64,15 +52,12 @@ namespace WinFormServer
             _roomManager.Remove(e.ClientHandler);
             _roomManager.SendToMyRoom(hub);
 
-            lbxClients.Items.Remove(e.Hub);
-            AddClientMessageList(hub);
+            Clients.Items.Remove(e.Hub);
         }
 
         private void Received(object? sender, ChatEventArgs e)
         {
             // _roomManager.SendToMyRoom(e.Hub);
-            
-            AddClientMessageList(e.Hub);
 
             ChatHub hub = e.Hub;
             var users = _roomManager.GetRoomUsers(hub.RoomId);
@@ -80,7 +65,7 @@ namespace WinFormServer
             if (hub.Message.StartsWith("MsgSend:"))
             {
                 var msg = hub.Message.Substring("MsgSend:".Length);
-                
+
                 SendMessages(msg, e.Hub.UserName, e.Hub.RoomId);
             }
             if (hub.Message.StartsWith("plzUserList"))
