@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "D:\\2024\\3-1\\AS\\teamproject\\server\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\AppData\\Local\\SourceServer\\eab2853f6f202c0003647b087af7fd23b8f7983712e0b8dbcaca480068c30939\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\Control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F2A160DF-F700-4595-A2F3-3117BECE3668}|Server\\WinFormServer.csproj|d:\\2024\\3-1\\as\\teamproject\\server\\server\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2A160DF-F700-4595-A2F3-3117BECE3668}|Server\\WinFormServer.csproj|solutionrelative:server\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,57 +37,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Control.cs",
+              "DocumentMoniker": "C:\\Users\\User\\AppData\\Local\\SourceServer\\eab2853f6f202c0003647b087af7fd23b8f7983712e0b8dbcaca480068c30939\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\Control.cs",
+              "ToolTip": "C:\\Users\\User\\AppData\\Local\\SourceServer\\eab2853f6f202c0003647b087af7fd23b8f7983712e0b8dbcaca480068c30939\\src\\System.Windows.Forms\\src\\System\\Windows\\Forms\\Control.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "ViewState": "AQIAAKsbAAAAAAAAAAASwK8bAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T15:31:05.303Z",
+              "EditorCaption": " [\uC77D\uAE30 \uC804\uC6A9]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ConnectionDetails.cs",
               "DocumentMoniker": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Models\\ConnectionDetails.cs",
               "ToolTip": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Models\\ConnectionDetails.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T09:10:08.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T09:10:08.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ChatState.cs",
               "DocumentMoniker": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Models\\ChatState.cs",
               "ToolTip": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Models\\ChatState.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T09:10:07.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T09:10:07.399Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Models\\ChatHub.cs",
               "ToolTip": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Models\\ChatHub.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T09:10:05.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T09:10:05.089Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ClientRoomManager.cs",
               "DocumentMoniker": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Handlers\\ClientRoomManager.cs",
               "ToolTip": "C:\\Users\\ibsun\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\APP\\library\\Handlers\\ClientRoomManager.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAYwBMAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T09:09:23.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T09:09:23.107Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\Form1.cs",
               "RelativeDocumentMoniker": "Server\\Form1.cs",
-              "ToolTip": "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\Form1.cs*",
-              "RelativeToolTip": "Server\\Form1.cs*",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAqwCUAAAAjAAAA",
+              "ToolTip": "D:\\2024\\3-1\\AS\\teamproject\\server\\Server\\Form1.cs",
+              "RelativeToolTip": "Server\\Form1.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAEwGgAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T23:38:14.726Z",
               "EditorCaption": ""

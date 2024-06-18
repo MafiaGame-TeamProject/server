@@ -102,7 +102,7 @@ namespace WinFormServer
             {
                 string votedUser = hub.Message.Substring("VOTED:".Length);
                 votedUsers.Add(votedUser);
-
+                Console.WriteLine($"{votedUser}");
                 if(votedUsers.Count == 4){
                     var mostVotedUser = votedUsers.GroupBy(u => u)
                                 .OrderByDescending(g => g.Count())
