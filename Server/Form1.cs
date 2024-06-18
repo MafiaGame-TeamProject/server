@@ -35,8 +35,8 @@ namespace WinFormServer
             _roomManager.SendToMyRoom(hub);
 
             Clients.Items.Add(e.Hub);
-
-            SendUserListToRoomClients(hub.RoomId);
+            if(userList.Count <= 4)
+                SendUserListToRoomClients(hub.RoomId);
 
             // 만약 방에 4명이 있다면 제시어를 할당하고 전송
             if (userList.Count == 4)
@@ -67,6 +67,20 @@ namespace WinFormServer
                 var msg = hub.Message.Substring("MsgSend:".Length);
 
                 SendMessages(msg, e.Hub.UserName, e.Hub.RoomId);
+            }
+            if (hub.Message.StartsWith("plzUserCount"))
+            {
+                var userNames = users.Select(u => u.InitialData.UserName).ToList();
+                var responseHub = new ChatHub
+                {
+                    RoomId = hub.RoomId,
+                    State = ChatState.Message,
+                    Message = "UserCount:"+userNames.Count.ToString()
+                };
+                Console.WriteLine("RoomID:" + responseHub.RoomId + " MESSAGE:" + responseHub.Message);
+
+                users[users.Count-1].Send(responseHub);
+                
             }
             if (hub.Message.StartsWith("plzUserList"))
             {
